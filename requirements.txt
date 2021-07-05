@@ -1,2 +1,6 @@
-jsonify
+requests
+datetime
 Web3
+
+telebot
+pyTelegramBotAPI
