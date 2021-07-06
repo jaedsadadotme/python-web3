@@ -31,6 +31,12 @@ factory_abi     = factory["Factory"]
 factory_pair    = factory["Pairs"]
 
 
+def getWallet() : 
+    contract    = web3.eth.contract(address=DOP, abi=factory_pair)
+    address     = web3.toChecksumAddress(wallet)
+    balance     = web3.fromWei(contract.functions.balanceOf(address).call(), "ether")
+    return balance
+
 def getDopPrice(factory_address,factory_abi,factory_pair,InputTokenAddr,OutputTokenAddr) :
     factory_address = web3.toChecksumAddress(factory_address)
     contract        = web3.eth.contract(address=factory_address, abi=factory_abi)
